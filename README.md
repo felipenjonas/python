@@ -1,2 +1,2 @@
 # python
-Alguns exercícios feito em linguagem Python
+Alguns exercícios feitos em linguagem Python
