@@ -1,0 +1,5 @@
+import csv
+
+salvadados = open('dadosbasicos.csv', 'w')
+
+endereco = (input(`Digite seu endereco`))
