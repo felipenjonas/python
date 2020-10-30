@@ -34,21 +34,29 @@ grafo = {
     ]
 }
 
+# Consultar os vértices do Grafo:
 def print_vertices():
     for vertice in grafo:
-        vertices = vertice[0:5]
+        vertices = [vertice[0:5]]
         print(vertices)
 
+# Consultar as arestas ponderadas de cada vértice do Grafo:
 def print_arestas():
     for aresta in grafo.values():
-        print(aresta)
+        print(f'\n{aresta}')
 
 def valida_ciclo():
     print()
 
+# Criar a ordenação do Grafo:
+def ordenaGrafo():
+    
+
 
 print_vertices()
 print_arestas()
+
+
 
 
 
