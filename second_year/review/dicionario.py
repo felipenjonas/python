@@ -30,8 +30,8 @@ print(pessoa)
 print(pessoa.keys())
 
 
-# Mostrar os valroes
+# # Mostrar os valroes
 print(pessoa.values())
 
-# LIMPAR ou deleta:
+# # LIMPAR ou deleta:
 print(pessoa.clear())

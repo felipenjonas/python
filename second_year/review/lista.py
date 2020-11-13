@@ -19,3 +19,5 @@ print(f'O menor valor da lista é: [ {min(numbers_list)} ] \n')
 
 
 
+
+

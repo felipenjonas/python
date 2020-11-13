@@ -1,3 +1,6 @@
+from tabulate import tabulate
+
+
 # EXEMPLO DE CRIAR O GRAFO PONDERADO com algoritmo de Kruskel
 grafo = { 
     '0': [
@@ -34,6 +37,11 @@ grafo = {
     ]
 }
 
+def line():
+    print('\n')
+    print('-'*60)
+
+
 # Consultar os vértices do Grafo:
 def print_vertices():
     for vertice in grafo:
@@ -48,23 +56,57 @@ def print_arestas():
 def valida_ciclo():
     print()
 
-# Criar a ordenação do Grafo:
+# Criar outra Lista com tabela
+
+
+# Criar a ordenação do Grafo pelo PESO:
 def ordenaGrafo():
-    
+    line()
+
+    tab = []
+    i = 0
 
 
-print_vertices()
-print_arestas()
+    for v in grafo.keys():
+        
+        for a in grafo[v]:
+            aresta = [v]
+            aresta.insert(1,a[0])
+            aresta.insert(2,a[1])
+            tab.insert(i,aresta)
+            i += 1
+
+     
+    # Ordenando a tabela - algoritmo de "bubble sort"
+    for j in range(i):
+        for k in range(j,i):
+            if tab[j][2] > tab[k][2]:
+                tab[j][2], tab[k][2] = tab[k][2], tab[j][2]
+
+    for j in range(i):
+        print(tab[j])
 
 
 
 
 
+    # print(tabulate(
+    #     [
+    #         # ['0 - '+ grafo['0'][0][0], grafo['0'][0][1]],
+            
+            
+            
+    #     ], 
+    #     headers=['Aresta','Peso']
+    # ))
 
 
 
+# print_vertices()
+# line()
+# print_arestas()
 
-
+ordenaGrafo()
 
 
 
