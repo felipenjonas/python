@@ -1,3 +1,7 @@
+# Felipe Gabriel Novais Jonas
+# Trabalho P2 - AGM | Kruskal 
+
+
 def verifica_agm(G,v):
     pilha = []
     visitados = []
@@ -19,13 +23,10 @@ def verifica_agm(G,v):
                 topo+=1
                 n = item[0]
 
-                
     if (len(visitados) == len(G.keys())):
         return True
     else:
         return False
-
-
 # aresta = ['A',['B',2]]
 
 def gerar_tab(G, tab):
@@ -43,7 +44,6 @@ def ordenar(tab):
             if (tab[i][1][1]>tab[j][1][1]):
                 tab[i],tab[j] = tab[j],tab[i]
 
-
 def gerar_agm(agm, tot_vert , tab):
     #  Vamos usar uma variável "I" para nos ajudar a indicar qual linha em tab() que será inserida na AGM
     i = 0
@@ -60,9 +60,6 @@ def gerar_agm(agm, tot_vert , tab):
 
         if (tab[i][1][0] not in agm):
             agm[tab[i][1][0]] = []
-
-        # Antes de inserir as arestas, verificar se elas produziram ciclos na AGM
-
 
         #  Inserindo as arestas
         if (tab[i][1] not in agm[tab[i][0]]):
@@ -82,23 +79,55 @@ def gerar_agm(agm, tot_vert , tab):
 
     return soma/2
 
+# ====================  programa principal =================================
 
-
-#programa principal
-
-grafo={'A':[['B',6],['C',1], ['D',5]],
-        'B':[['A',6],['C',2],['E',5]],
-        'C':[['A',1],['B',2],['D',2],['E',6],['F',4]],
-        'D':[['A',5], ['C',2],['F',4]],
-        'E':[['B',5],['C',6],['F',3]],
-        'F':[['C',4],['D',4],['E',3]]}
+grafo={
+    'A':
+        [
+            ['B',6],
+            ['C',1],
+            ['D',5]
+        ],
+    'B':
+        [
+            ['A',6],
+            ['C',2],
+            ['E',5]
+        ],
+    'C':
+        [
+            ['A',1],
+            ['B',2],
+            ['D',2],
+            ['E',6],
+            ['F',4]
+        ],
+    'D':
+        [
+            ['A',5],
+            ['C',2],
+            ['F',4]
+        ],
+    'E':
+        [
+            ['B',5],
+            ['C',6],
+            ['F',3]
+        ],
+    'F':
+        [
+            ['C',4],
+            ['D',4],
+            ['E',3]
+        ]
+}
 
 
 # tab é a tabela com as arestas... deverá ser ordenada.
 tab = []
 agm = { }
 
-print("Grafo:")
+print("\nGrafo:")
 for v,a in  grafo.items():
     print(v,a)
 
@@ -110,10 +139,10 @@ ordenar (tab)
 if verifica_agm(grafo, tab[0][0]):
     custo = gerar_agm(agm, len(grafo.keys()), tab)
 
-    print("AGM:")
+    print("\nAGM:")
     for v,a in  agm.items():
         print(v,a)
         
-    print("Custo = ", int(custo))
+    print("\nCusto = ", int(custo))
 else:
-    print("Grafo desconexo! Não existe AGM")
+    print("\nOpsss..Grafo desconexo! Não existe AGM")

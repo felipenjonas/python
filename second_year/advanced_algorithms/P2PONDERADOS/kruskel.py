@@ -87,6 +87,18 @@ def ordenaGrafo():
         print(tab[j])
 
 
+# Montar a AGM, pela ordem criada, Insere uma e pergunta, se terminou, depois quando inserir todos os vértices
+#  No final verifica se esta tudo conectado, se sim, acabou.
+# custo da agm é somar as arestas, essa agm foi geradda com custo 12
+
+
+
+
+
+
+
+
+
 
 
 
